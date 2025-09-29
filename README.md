@@ -1,0 +1,2 @@
+# TMG-Net
+Official code of "Transmission-matrix-guided untrained neural network for projecting structured light through scattering media"
