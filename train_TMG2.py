@@ -138,20 +138,18 @@ if __name__ == '__main__':
     try:
         print('Start training.')
 
-        for row in range(Eout.shape[1]):
-            NN_input = torch.rand([1, total_size]).to(device)
+        NN_input = torch.rand([1, total_size]).to(device)
 
-            for i in range(epoch + 1):
-                start1 = time.time()
-                train_loss = train_model()
-                adjust_learning_rate(optimizer_r, i)
-                print(f'Training Epoch {i} Model {row}, train_loss:{train_loss},')
-                end1 = time.time()
-                print(f'Training time for epoch {i}: {end1 - start1} seconds.')
+        for i in range(epoch + 1):
+            start1 = time.time()
+            train_loss = train_model()
+            adjust_learning_rate(optimizer_r, i)
+            end1 = time.time()
+            print(f'Training time for epoch {i}: {end1 - start1} seconds.')
 
-            loss_list.append(train_loss.detach().cpu().numpy())
+        loss_list.append(train_loss.detach().cpu().numpy())
 
-            print(f'Training finished {row}.')
+        print(f'Training finished.')
 
     except KeyboardInterrupt:
         print('Training interrupted.')
