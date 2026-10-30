@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from TMGnet import Small_NN
+from TMGnet import TMGnet as Small_NN
 import time
 import scipy.io as scio
 import numpy as np
